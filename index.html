@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="">Create Meeting</button>
+  </body>
+  <script>
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+
+    script.addEventListener("load", function (event) {
+      const config = {
+        name: "Demo User",
+        meetingId: "milkyway",
+        apiKey: "5886f122-71db-45b2-995a-3b35f3ae1e12",
+
+        containerId: null,
+
+        micEnabled: true,
+        webcamEnabled: true,
+        participantCanToggleSelfWebcam: true,
+        participantCanToggleSelfMic: true,
+
+        chatEnabled: true,
+        screenShareEnabled: true,
+
+        joinScreen: {
+          visible: true,
+          title: "Daily scrum",
+          meetingUrl: "customURL.com",
+        },
+
+        /*
+  
+       Other Feature Properties
+        
+        */
+      };
+
+      const meeting = new VideoSDKMeeting();
+      meeting.init(config);
+    });
+
+    script.src =
+      "https://sdk.videosdk.live/rtc-js-prebuilt/0.3.31/rtc-js-prebuilt.js";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  </script>
+</html>
